@@ -2,7 +2,7 @@ const path=require('path')
 const express= require('express')
 const hbs=require('hbs')
 const geocode=require('./Utils/Geocode')
-const forecast=require('./Utils/forecast')
+const forecast=require('./Utils/Forecast')
 const app=express()
 //define paths for Express Config
 const port=process.env.PORT ||3000
