@@ -5,6 +5,7 @@ const geocode=require('./Utils/Geocode')
 const forecast=require('./Utils/forecast')
 const app=express()
 //define paths for Express Config
+const port=process.env.PORT ||3000
 const viewsPath=path.join(__dirname,'../templates/views')
 const partialsPath=path.join(__dirname,'../templates/partials')
 //console.log(viewsPath)
@@ -91,6 +92,6 @@ app.get('*', (req,res)=>{
         errorMessage:'Page not found'
     })
 })
-app.listen(3000, ()=>{
-    console.log('server is up on port 3000')
+app.listen(port, ()=>{
+    console.log('server is up on port'+ port)
 })
