@@ -8,9 +8,10 @@ const forecast=(longitude, latitude, callback)=>{
             callback('Unable to get the forecast', undefined)
         } else{
             callback(undefined, {
-                Summary:response.body.daily.data[0].summary, 
+                daily:response.body.daily, 
                 Temperature:response.body.currently.temperature,
-                Precipitation:response.body.currently.precipProbability
+                Precipitation:response.body.currently.precipProbability,
+                
             })
         }
     })

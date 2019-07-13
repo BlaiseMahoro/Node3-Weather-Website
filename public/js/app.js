@@ -19,9 +19,11 @@ weatherForm.addEventListener('submit',(e)=>{
             messageOne.textContent=data.error
         } else{
         console.log(data)
-        messageOne.textContent="Location:" +data.location
-        messageTwo.textContent="Forecast:"+data.forecast.Summary+" It is "+data.forecast.Temperature+
-        " degrees Celsius and there is "+data.forecast.Precipitation+ " chance of precipitation"
+        messageOne.textContent="Location: " +data.location
+        messageTwo.innerHTML="Forecast: " +data.forecast.daily.data[0].summary+ "<br><br>Temperature: "+data.forecast.Temperature+
+        "°C.<br><br> "+"Min. Temperature: "+data.forecast.daily.data[0].temperatureMin+"°C.<br> <br>"+
+        "Max. Temperature: "+data.forecast.daily.data[0].temperatureMax+"°C.<br> <br>"+
+        "Precipitation: "+ data.forecast.Precipitation+". s"
         }
     })
     
